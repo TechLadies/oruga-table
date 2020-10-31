@@ -29,7 +29,7 @@
       <o-table-column field="id" label="ID" width="40" sortable numeric v-slot="props">
         {{ props.row.id }}
       </o-table-column>
-      <o-table-column field="first_name" label="First Name" v-slot="props" sortable v-if="!isHoverable">
+      <o-table-column field="first_name" label="First Name" v-slot="props" sortable>
         {{ props.row.first_name }}
       </o-table-column>
       <o-table-column field="last_name" label="Last Name" v-slot="props">
@@ -100,14 +100,14 @@ export default {
       const selectRow = (e) => {
         console.log('selected', e)
 
+      } 
+      const pageChange = (e) => {
+        console.log('page change', e)
         // call backend
 
         // update
         // total = total records (from backend) e.g. 100 rows total
         // datax = records from backend only 10 rows returned for the page
-      } 
-      const pageChange = (e) => {
-        console.log('page change', e)
       }
       const onSort = () => {
         console.log('sort change')
